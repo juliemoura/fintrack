@@ -1,35 +1,31 @@
-import React from "react";
+import * as React from "react";
+import { type VariantProps } from "class-variance-authority";
+import { Slot } from "radix-ui";
 
-type Variant = "primary" | "secondary" | "danger" | "ghost";
-type Size = "sm" | "md" | "lg";
+import { cn } from "../../lib/utils";
+import { buttonVariants } from "./Button/button.styles";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: Variant;
-  size?: Size;
-  loading?: boolean;
-}
-
-export function Button({
-  variant = "primary",
-  size = "md",
-  loading = false,
-  children,
-  disabled,
+const Button = ({
+  className,
+  variant = "default",
+  size = "default",
+  asChild = false,
   ...props
-}: ButtonProps) {
-  const classes = [
-    "btn",
-    `btn-${variant}`,
-    size !== "md" && `btn-${size}`,
-    loading && "btn-loading",
-  ]
-    .filter(Boolean)
-    .join(" ");
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+  }) => {
+  const Comp = asChild ? Slot.Root : "button";
 
   return (
-    <button className={classes} disabled={disabled || loading} {...props}>
-      {loading && <span className="spinner" aria-hidden="true" />}
-      <span className="btn-text">{children}</span>
-    </button>
+    <Comp
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
   );
-}
+};
+
+export { Button };
