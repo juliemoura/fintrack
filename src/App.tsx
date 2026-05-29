@@ -1,7 +1,11 @@
-import AppRoutes from "./routes/AppRoutes";
+import AppRoutes from "@/routes/AppRoutes";
 
 function App() {
-  return <AppRoutes />;
+  return (
+    <div className="h-screen w-screen overflow-hidden">
+      <AppRoutes />
+    </div>
+  );
 }
 
 export default App;
