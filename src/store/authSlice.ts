@@ -1,3 +1,8 @@
+// Aqui basicamente temos o coração da autenticação. É aqui que fica toda a lógica de estado do login.
+// O createAsyncThunk define o fluxo assíncrono (a "chamada de API"), e o slice cuida automaticamente dos três estados possíveis: 
+// loading, succeeded e failed. Sem ele, teríamos que gerenciar esses estados manualmente em cada componente com useState, 
+// o que vira um caos quando a mesma informação de "usuário logado" precisa aparecer em vários lugares ao mesmo tempo. :)
+
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { LoginSchema } from "../components/auth/schema";
 
@@ -84,8 +89,3 @@ const authSlice = createSlice({
 
 export const { logout, clearError } = authSlice.actions;
 export default authSlice.reducer;
-
-// Aqui basicamente temos o coração da autenticação. É aqui que fica toda a lógica de estado do login.
-// O createAsyncThunk define o fluxo assíncrono (a "chamada de API"), e o slice cuida automaticamente dos três estados possíveis: 
-// loading, succeeded e failed. Sem ele, teríamos que gerenciar esses estados manualmente em cada componente com useState, 
-// o que vira um caos quando a mesma informação de "usuário logado" precisa aparecer em vários lugares ao mesmo tempo. :)
