@@ -5,6 +5,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   hint?: string;
   error?: string;
   icon?: React.ReactNode;
+  type?: string;
 }
 
 export function Input({
@@ -13,6 +14,7 @@ export function Input({
   icon,
   className,
   disabled,
+  type = "text",
   ...props
 }: InputProps) {
   return (
@@ -28,14 +30,16 @@ export function Input({
         )}
         <input
           disabled={disabled}
+          type={type}
           className={`
-            w-full px-4 py-3 pl-12 rounded-xl
+            w-full px-4 py-3 rounded-xl
             bg-slate-800 border border-slate-700
             text-white placeholder-slate-500
             transition-all duration-200
             focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent
             hover:border-slate-600
             disabled:opacity-50 disabled:cursor-not-allowed
+            ${icon ? "pl-12" : ""}
             ${error ? "border-red-500 focus:ring-red-500" : ""}
             ${className || ""}
           `}
