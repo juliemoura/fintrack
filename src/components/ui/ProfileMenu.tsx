@@ -3,8 +3,8 @@ import { LogOut } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
 import { Popover, PopoverTrigger, PopoverContent } from "./Popover";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../store/hooks";
-import { logout } from "../../store/authSlice";
+import { useAppDispatch } from "@/store/hooks";
+import { logout } from "@/store/authSlice";
 
 interface ProfileMenuProps {
   userName?: string;
