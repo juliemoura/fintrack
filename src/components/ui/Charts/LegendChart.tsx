@@ -12,38 +12,19 @@ import {
 import type { LegendPayload } from "recharts";
 import { RechartsDevtools } from "@recharts/devtools";
 
-const data = [
-  {
-    name: "Jan",
-    receitas: 4000,
-    despesas: 2400,
-  },
-  {
-    name: "Fev",
-    receitas: 3000,
-    despesas: 1398,
-  },
-  {
-    name: "Mar",
-    receitas: 2000,
-    despesas: 9800,
-  },
-  {
-    name: "Abr",
-    receitas: 2780,
-    despesas: 3908,
-  },
-  {
-    name: "Mai",
-    receitas: 1890,
-    despesas: 4800,
-  },
-  {
-    name: "Jun",
-    receitas: 2390,
-    despesas: 3800,
-  },
-];
+interface Entry {
+  id: string;
+  type: "receita" | "despesa";
+  date: string;
+  value: number;
+  description?: string;
+  category?: string;
+}
+
+interface LegendChartProps {
+  receita: Entry[];
+  despesa: Entry[];
+}
 
 const formatCurrency = (value: number) => {
   return `R$ ${(value / 1000).toFixed(1)}k`;
@@ -86,10 +67,56 @@ const CustomTooltip = ({
   return null;
 };
 
-const LegendChart = () => {
+const LegendChart = ({ receita, despesa }: LegendChartProps) => {
   const [hoveringDataKey, setHoveringDataKey] = React.useState<
     string | number | undefined
   >(undefined);
+
+  const processChartData = () => {
+    const now = new Date();
+    const currentMonth = now.getMonth();
+    const currentYear = now.getFullYear();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+    const dailyData: Record<string, { receitas: number; despesas: number }> =
+      {};
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      dailyData[day] = { receitas: 0, despesas: 0 };
+    }
+
+    receita.forEach((entry) => {
+      const date = new Date(entry.date);
+      if (
+        date.getMonth() === currentMonth &&
+        date.getFullYear() === currentYear
+      ) {
+        const day = date.getDate();
+        dailyData[day].receitas += entry.value;
+      }
+    });
+
+    despesa.forEach((entry) => {
+      const date = new Date(entry.date);
+      if (
+        date.getMonth() === currentMonth &&
+        date.getFullYear() === currentYear
+      ) {
+        const day = date.getDate();
+        dailyData[day].despesas += entry.value;
+      }
+    });
+
+    return Object.entries(dailyData)
+      .sort(([dayA], [dayB]) => parseInt(dayA) - parseInt(dayB))
+      .map(([day, values]) => ({
+        name: day,
+        receitas: values.receitas,
+        despesas: values.despesas,
+      }));
+  };
+
+  const data = processChartData();
 
   let receitasOpacity = 1;
   let despesasOpacity = 1;
