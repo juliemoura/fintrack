@@ -1,10 +1,13 @@
+import CardsGroup from "@/components/dashboard/CardsGroup";
+import ChartsGroup from "@/components/dashboard/ChartsGroup";
 
 function Dashboard() {
   return (
     <>
-      <h1 className="border-red">Bem vindo ao dash</h1>    
+      <CardsGroup />
+      <ChartsGroup />
     </>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
