@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "julie.moura@gmail.com",
+      "password": "juliemoura123",
+      "name": "Julie Moura"
+    },
+    {
+      "id": "2",
+      "email": "rodolfo.gama@gmail.com",
+      "password": "rodolfogama123",
+      "name": "Rodolfo Gama"
+    }
+  ],
+  "entries": [
+    {
+      "id": "2",
+      "userId": 1,
+      "type": "despesa",
+      "category": "alimentacao",
+      "value": 200,
+      "date": "2024-06-02",
+      "description": "Supermercado"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "type": "despesa",
+      "category": "transporte",
+      "value": 50,
+      "date": "2024-06-03",
+      "description": "Uber"
+    },
+    {
+      "id": "4",
+      "userId": 2,
+      "type": "receita",
+      "category": "poupanca",
+      "value": 500,
+      "date": "2024-06-04",
+      "description": "Freelance"
+    },
+    {
+      "id": "5",
+      "userId": 2,
+      "type": "despesa",
+      "category": "lazer",
+      "value": 150,
+      "date": "2024-06-05",
+      "description": "Cinema"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 90,
+      "date": "2026-05-31",
+      "description": "Pagamento Aluguel",
+      "id": "XxG8dUl-Tzk"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 90,
+      "date": "2026-05-31",
+      "description": "Mercado",
+      "id": "ht8geNx4FxQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
