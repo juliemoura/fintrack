@@ -15,24 +15,6 @@
   ],
   "entries": [
     {
-      "id": "2",
-      "userId": 1,
-      "type": "despesa",
-      "category": "alimentacao",
-      "value": 200,
-      "date": "2024-06-02",
-      "description": "Supermercado"
-    },
-    {
-      "id": "3",
-      "userId": 1,
-      "type": "despesa",
-      "category": "transporte",
-      "value": 50,
-      "date": "2024-06-03",
-      "description": "Uber"
-    },
-    {
       "id": "4",
       "userId": 2,
       "type": "receita",
@@ -67,6 +49,609 @@
       "date": "2026-05-31",
       "description": "Mercado",
       "id": "ht8geNx4FxQ"
+    },
+    {
+      "userId": 0,
+      "id": "-6vmbE6Y8AY",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 1702,
+      "date": "2026-05-24",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "i8XJyZ-p3RA",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 1774,
+      "date": "2026-05-14",
+      "description": "Salário"
+    },
+    {
+      "userId": 0,
+      "id": "UJOe_3z2Y7M",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 2864,
+      "date": "2026-05-05",
+      "description": "Pagamento"
+    },
+    {
+      "userId": 0,
+      "id": "Rdtp6E163NI",
+      "type": "despesa",
+      "category": "lazer",
+      "value": 5049,
+      "date": "2026-05-28",
+      "description": "Imposto"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 999,
+      "date": "2026-05-31",
+      "description": "despesa aluguel",
+      "id": "dWyhHQ4W6vM"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 999,
+      "date": "2026-05-31",
+      "description": "despesa aluguel",
+      "id": "Co6sS5fBKtQ"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 2389,
+      "date": "2026-05-31",
+      "description": "aluguel leblon",
+      "id": "8Je97tUaGL8"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "alimentacao",
+      "value": 834,
+      "date": "2026-05-31",
+      "description": "carrefour",
+      "id": "tAXpwVKohKs"
+    },
+    {
+      "userId": "1",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 99,
+      "date": "2026-05-31",
+      "description": "aluguel ipa",
+      "id": "68DIiJt-VQU"
+    },
+    {
+      "userId": 0,
+      "id": "g-oj-7ovDK8",
+      "type": "receita",
+      "category": "lazer",
+      "value": 3201,
+      "date": "2026-05-19",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "gSYLJgJ3784",
+      "type": "receita",
+      "category": "outros",
+      "value": 3780,
+      "date": "2026-06-01",
+      "description": "Salário"
+    },
+    {
+      "userId": 0,
+      "id": "h9XpjJD8ZB0",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 663,
+      "date": "2026-05-28",
+      "description": "Imposto"
+    },
+    {
+      "userId": 0,
+      "id": "IiakmSexhTI",
+      "type": "despesa",
+      "category": "lazer",
+      "value": 4288,
+      "date": "2026-05-24",
+      "description": "Compra"
+    },
+    {
+      "userId": 0,
+      "id": "-44Re_chyBo",
+      "type": "receita",
+      "category": "poupanca",
+      "value": 1575,
+      "date": "2026-05-25",
+      "description": "Devolução"
+    },
+    {
+      "userId": 0,
+      "id": "XrHI2jr2UFo",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 3036,
+      "date": "2026-05-20",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "BNhKtfVEYok",
+      "type": "receita",
+      "category": "lazer",
+      "value": 3100,
+      "date": "2026-05-23",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "fMJSrZgLrCU",
+      "type": "receita",
+      "category": "moradia",
+      "value": 978,
+      "date": "2026-05-18",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "ySr0nTXQQy0",
+      "type": "receita",
+      "category": "outros",
+      "value": 1371,
+      "date": "2026-05-20",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "gwwfo4-u6H0",
+      "type": "receita",
+      "category": "poupanca",
+      "value": 4097,
+      "date": "2026-05-08",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "4rUJo5XJ6pI",
+      "type": "receita",
+      "category": "moradia",
+      "value": 2680,
+      "date": "2026-05-21",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "vDkCugqURD8",
+      "type": "receita",
+      "category": "poupanca",
+      "value": 1949,
+      "date": "2026-06-01",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "yFiAoN06ZAM",
+      "type": "receita",
+      "category": "outros",
+      "value": 2827,
+      "date": "2026-05-30",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "ByIfxYlbraE",
+      "type": "receita",
+      "category": "saude",
+      "value": 3578,
+      "date": "2026-05-24",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "-1TAAbjk66E",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 309,
+      "date": "2026-05-29",
+      "description": "Devolução"
+    },
+    {
+      "userId": 0,
+      "id": "T_wa8xLAGTc",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 2530,
+      "date": "2026-05-16",
+      "description": "Salário"
+    },
+    {
+      "userId": 0,
+      "id": "NIQn3_hnwnU",
+      "type": "receita",
+      "category": "poupanca",
+      "value": 3705,
+      "date": "2026-05-20",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "HdoiERs9aEI",
+      "type": "despesa",
+      "category": "alimentacao",
+      "value": 2144,
+      "date": "2026-05-19",
+      "description": "Pagamento"
+    },
+    {
+      "userId": 0,
+      "id": "ne9-MpZaw8s",
+      "type": "despesa",
+      "category": "saude",
+      "value": 2261,
+      "date": "2026-05-16",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "CGCjNbbja3Y",
+      "type": "receita",
+      "category": "moradia",
+      "value": 1322,
+      "date": "2026-05-18",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "hlr2gurWM9s",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 1150,
+      "date": "2026-05-14",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "AMq5tOc4Hgc",
+      "type": "receita",
+      "category": "transporte",
+      "value": 2867,
+      "date": "2026-05-03",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "HerM-BjDf3c",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 3364,
+      "date": "2026-05-20",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "ehij71tfSfw",
+      "type": "despesa",
+      "category": "alimentacao",
+      "value": 866,
+      "date": "2026-05-04",
+      "description": "Subscription"
+    },
+    {
+      "userId": 0,
+      "id": "Cl2mxbSTBkI",
+      "type": "despesa",
+      "category": "transporte",
+      "value": 3669,
+      "date": "2026-05-16",
+      "description": "Pagamento"
+    },
+    {
+      "userId": 0,
+      "id": "AaDgSHcw45g",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 3676,
+      "date": "2026-05-09",
+      "description": "Pagamento"
+    },
+    {
+      "userId": 0,
+      "id": "gDFAfHiYkPE",
+      "type": "receita",
+      "category": "saude",
+      "value": 145,
+      "date": "2026-05-19",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "OhkJH-K7jIE",
+      "type": "receita",
+      "category": "outros",
+      "value": 4728,
+      "date": "2026-05-19",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "rqurCd3y_FY",
+      "type": "despesa",
+      "category": "lazer",
+      "value": 416,
+      "date": "2026-05-09",
+      "description": "Compra"
+    },
+    {
+      "userId": 0,
+      "id": "R5Rf_wsp8-g",
+      "type": "receita",
+      "category": "transporte",
+      "value": 3409,
+      "date": "2026-05-27",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "azntq0s1444",
+      "type": "receita",
+      "category": "saude",
+      "value": 4358,
+      "date": "2026-05-22",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "_xMelNbeJKI",
+      "type": "despesa",
+      "category": "lazer",
+      "value": 2667,
+      "date": "2026-06-01",
+      "description": "Subscription"
+    },
+    {
+      "userId": 0,
+      "id": "vZJR0n9XCvA",
+      "type": "receita",
+      "category": "saude",
+      "value": 1758,
+      "date": "2026-05-30",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "4lBBhVaedUs",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 4518,
+      "date": "2026-05-24",
+      "description": "Pagamento"
+    },
+    {
+      "userId": 0,
+      "id": "CQzrP8jkXaQ",
+      "type": "despesa",
+      "category": "transporte",
+      "value": 4838,
+      "date": "2026-05-06",
+      "description": "Pagamento"
+    },
+    {
+      "userId": 0,
+      "id": "hW1Wu9Imt0U",
+      "type": "receita",
+      "category": "saude",
+      "value": 3069,
+      "date": "2026-05-11",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "qIyrWMygIjI",
+      "type": "receita",
+      "category": "saude",
+      "value": 604,
+      "date": "2026-05-05",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "UL1KhFStLjA",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 3934,
+      "date": "2026-05-24",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "lSIJLf824dI",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 3857,
+      "date": "2026-05-17",
+      "description": "Bônus"
+    },
+    {
+      "userId": 0,
+      "id": "rp7YQO9UlPc",
+      "type": "receita",
+      "category": "poupanca",
+      "value": 2764,
+      "date": "2026-05-04",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "bQ-VmTZqOX8",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 2201,
+      "date": "2026-05-12",
+      "description": "Salário"
+    },
+    {
+      "userId": 0,
+      "id": "SIQ9IZpLadc",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 4664,
+      "date": "2026-05-19",
+      "description": "Devolução"
+    },
+    {
+      "userId": 0,
+      "id": "fGJvATdjA6A",
+      "type": "receita",
+      "category": "moradia",
+      "value": 3406,
+      "date": "2026-05-26",
+      "description": "Devolução"
+    },
+    {
+      "userId": 0,
+      "id": "ghHUGxMnCmY",
+      "type": "despesa",
+      "category": "transporte",
+      "value": 2091,
+      "date": "2026-05-15",
+      "description": "Imposto"
+    },
+    {
+      "userId": 0,
+      "id": "2IZ1p5Ow25U",
+      "type": "despesa",
+      "category": "moradia",
+      "value": 2563,
+      "date": "2026-05-25",
+      "description": "Subscription"
+    },
+    {
+      "userId": 0,
+      "id": "Mzkpfc09qDU",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 919,
+      "date": "2026-05-27",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "LmH8NyWdH-E",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 798,
+      "date": "2026-05-09",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "qtozho1YqXE",
+      "type": "receita",
+      "category": "outros",
+      "value": 434,
+      "date": "2026-05-19",
+      "description": "Freelance"
+    },
+    {
+      "userId": 0,
+      "id": "ot4jtAEsY2k",
+      "type": "despesa",
+      "category": "lazer",
+      "value": 233,
+      "date": "2026-05-11",
+      "description": "Conta"
+    },
+    {
+      "userId": 0,
+      "id": "re9ZI_j5gNY",
+      "type": "receita",
+      "category": "transporte",
+      "value": 2226,
+      "date": "2026-05-04",
+      "description": "Venda"
+    },
+    {
+      "userId": 0,
+      "id": "IWqgQL2hkyM",
+      "type": "despesa",
+      "category": "alimentacao",
+      "value": 2731,
+      "date": "2026-05-11",
+      "description": "Imposto"
+    },
+    {
+      "userId": 0,
+      "id": "QWOyS7TUFgk",
+      "type": "despesa",
+      "category": "outros",
+      "value": 3560,
+      "date": "2026-05-24",
+      "description": "Imposto"
+    },
+    {
+      "userId": 0,
+      "id": "y4T8P_K_FiI",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 3372,
+      "date": "2026-05-11",
+      "description": "Compra"
+    },
+    {
+      "userId": 0,
+      "id": "jqN9RnCWcWY",
+      "type": "receita",
+      "category": "lazer",
+      "value": 4663,
+      "date": "2026-05-07",
+      "description": "Devolução"
+    },
+    {
+      "userId": 1,
+      "id": "NxMORiMOYdE",
+      "type": "receita",
+      "category": "transporte",
+      "value": 2660,
+      "date": "2026-05-30",
+      "description": "Venda"
+    },
+    {
+      "userId": 1,
+      "id": "fIQslLBdsV0",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 3438,
+      "date": "2026-05-21",
+      "description": "Imposto"
+    },
+    {
+      "userId": 1,
+      "id": "eiFj2J3e3KU",
+      "type": "receita",
+      "category": "saude",
+      "value": 244,
+      "date": "2026-05-29",
+      "description": "Salário"
+    },
+    {
+      "userId": 1,
+      "id": "xCeokvwDVFk",
+      "type": "receita",
+      "category": "alimentacao",
+      "value": 5050,
+      "date": "2026-05-23",
+      "description": "Devolução"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
