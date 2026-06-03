@@ -8,7 +8,7 @@ import { fetchEntries } from "@/store/entrySlice";
 import type { RootState } from "@/store/store";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { pageTitles } from "@/lib/types";
+import { pageTitles } from "@/types";
 
 function Layout() {
   const { user } = useAppSelector((state) => state.auth);
