@@ -7,7 +7,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/Sidebar";
-import { BarChart3, LayoutDashboard, History } from "lucide-react";
+import {
+  BarChart3,
+  LayoutDashboard,
+  History,
+  ClipboardMinus,
+} from "lucide-react";
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -60,7 +65,7 @@ function Sidebar() {
                   : "text-slate-300 hover:text-white hover:bg-slate-700"
               }`}
             >
-              <History className="w-4 h-4" />
+              <ClipboardMinus className="w-4 h-4" />
               Relatórios
             </SidebarMenuButton>
           </SidebarMenuItem>
