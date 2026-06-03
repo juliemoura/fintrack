@@ -51,6 +51,19 @@ function Sidebar() {
               Entradas
             </SidebarMenuButton>
           </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              onClick={() => navigate("/relatory")}
+              className={`cursor-pointer transition-colors ${
+                isActive("/relatory")
+                  ? "bg-[#6366f1] text-white hover:bg-[#4f46e5]"
+                  : "text-slate-300 hover:text-white hover:bg-slate-700"
+              }`}
+            >
+              <History className="w-4 h-4" />
+              Relatórios
+            </SidebarMenuButton>
+          </SidebarMenuItem>
         </SidebarMenu>
       </SidebarContent>
     </S>
