@@ -25,7 +25,7 @@ export const categories: Record<string, { icon: string; label: string }> = {
 
 
 // aqui eu gero entradas aleatórias pra facilitar o desenvolvimento e os testes.
-export const generateRandomEntries = (): Entry[] => {
+export const generateRandomEntries = (userId: number): Entry[] => {
   const categories = ["poupanca", "moradia", "alimentacao", "transporte", "lazer", "saude", "outros"] as const;
   const types = ["receita", "despesa"] as const;
   const descriptions = {
@@ -47,7 +47,7 @@ export const generateRandomEntries = (): Entry[] => {
     const desc = descriptions[type][Math.floor(Math.random() * descriptions[type].length)];
 
     entries.push({
-      userId: 0, 
+      userId, 
       id: `${Date.now()}-${i}`,
       type,
       category,
@@ -59,3 +59,4 @@ export const generateRandomEntries = (): Entry[] => {
 
   return entries;
 };
+
