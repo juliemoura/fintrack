@@ -30,6 +30,21 @@ function Login() {
               Faça login para acessar sua conta.
             </h3>
           </div>
+
+          <div className="mb-6 rounded-lg border border-indigo-500/30 bg-indigo-500/10 px-4 py-3 text-sm">
+            <p className="text-indigo-300 font-medium mb-1">
+              Credenciais de acesso
+            </p>
+            <div className="flex flex-col gap-1 text-slate-400">
+              <span>
+                <span className="text-slate-300">Email:</span> admin@gmail.com
+              </span>
+              <span>
+                <span className="text-slate-300">Senha:</span> admin123
+              </span>
+            </div>
+          </div>
+
           <LoginForm />
         </div>
       </div>
