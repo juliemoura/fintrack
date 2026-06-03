@@ -616,42 +616,6 @@
       "value": 4663,
       "date": "2026-05-07",
       "description": "Devolução"
-    },
-    {
-      "userId": 1,
-      "id": "NxMORiMOYdE",
-      "type": "receita",
-      "category": "transporte",
-      "value": 2660,
-      "date": "2026-05-30",
-      "description": "Venda"
-    },
-    {
-      "userId": 1,
-      "id": "fIQslLBdsV0",
-      "type": "despesa",
-      "category": "poupanca",
-      "value": 3438,
-      "date": "2026-05-21",
-      "description": "Imposto"
-    },
-    {
-      "userId": 1,
-      "id": "eiFj2J3e3KU",
-      "type": "receita",
-      "category": "saude",
-      "value": 244,
-      "date": "2026-05-29",
-      "description": "Salário"
-    },
-    {
-      "userId": 1,
-      "id": "xCeokvwDVFk",
-      "type": "receita",
-      "category": "alimentacao",
-      "value": 5050,
-      "date": "2026-05-23",
-      "description": "Devolução"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
