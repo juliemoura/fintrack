@@ -4,6 +4,20 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
+import { categories } from "@/lib/utils";
+
+interface Entry {
+  id: string;
+  type: "receita" | "despesa";
+  date: string;
+  value: number;
+  description?: string;
+  category?: string;
+}
+
+interface PieChartProps {
+  despesa: Entry[];
+}
 
 interface ExpenseCategory {
   name: string;
@@ -11,22 +25,56 @@ interface ExpenseCategory {
   color: string;
 }
 
-const data: ExpenseCategory[] = [
-  { name: "Moradia", value: 1650, color: "#6366f1" },
-  { name: "Alimentação", value: 980, color: "#10b981" },
-  { name: "Transporte", value: 560, color: "#f59e0b" },
-  { name: "Lazer", value: 450, color: "#ef4444" },
-  { name: "Saúde", value: 320, color: "#3b82f6" },
-  { name: "Outros", value: 240, color: "#8b5cf6" },
-];
+const CATEGORY_COLORS: Record<string, string> = {
+  poupanca: "#14b8a6",
+  moradia: "#6366f1",
+  alimentacao: "#10b981",
+  transporte: "#f59e0b",
+  lazer: "#ef4444",
+  saude: "#3b82f6",
+  outros: "#8b5cf6",
+};
 
-const total = data.reduce((sum, item) => sum + item.value, 0);
+export default function PieChart({ despesa }: PieChartProps) {
+  const processCategoryData = (): ExpenseCategory[] => {
+    const categoryData: Record<string, number> = {};
 
-export default function PieChart() {
+    despesa.forEach((entry) => {
+      const category = entry.category || "outros";
+      if (!categoryData[category]) {
+        categoryData[category] = 0;
+      }
+      categoryData[category] += entry.value;
+    });
+
+    return Object.entries(categoryData).map(([key, value]) => ({
+      name: key,
+      value,
+      color: CATEGORY_COLORS[key] || "#8b5cf6",
+    }));
+  };
+
+  const data = processCategoryData();
+  const total = data.reduce((sum, item) => sum + item.value, 0);
+
+  if (data.length === 0) {
+    return (
+      <div className="w-full">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-xl font-semibold text-white">Resumo do mês</h2>
+        </div>
+        <p className="text-slate-400 text-center py-8">
+          Nenhuma despesa registrada
+        </p>
+      </div>
+    );
+  }
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-xl font-semibold text-white">Resumo do mês</h2>
+        <h2 className="text-xl font-semibold text-white">
+          Resumo de despesas do mês
+        </h2>
       </div>
 
       <div className="flex gap-8 items-center">
@@ -54,6 +102,9 @@ export default function PieChart() {
         <div className="flex-1 space-y-4">
           {data.map((item) => {
             const percentage = ((item.value / total) * 100).toFixed(0);
+            const categoryLabel =
+              categories[item.name as keyof typeof categories]?.label ||
+              item.name;
             return (
               <div
                 key={item.name}
@@ -64,7 +115,9 @@ export default function PieChart() {
                     className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: item.color }}
                   />
-                  <span className="text-slate-300 text-sm">{item.name}</span>
+                  <span className="text-slate-300 text-sm">
+                    {categoryLabel}
+                  </span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="text-white font-semibold text-sm w-24 text-right">
