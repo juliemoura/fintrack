@@ -10,7 +10,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import type { LegendPayload } from "recharts";
-import { RechartsDevtools } from "@recharts/devtools";
 
 interface Entry {
   id: string;
@@ -50,17 +49,28 @@ const CustomTooltip = ({
   payload?: TooltipPayload[];
 }) => {
   if (active && payload && payload.length) {
-    const data = payload[0];
+    const data = payload[0].payload;
     return (
-      <div className="rounded-lg p-3">
-        <p className="text-slate-300 text-sm">{data.payload.name}/2025</p>
-        <p className="text-white font-semibold">
-          R${" "}
-          {data.value.toLocaleString("pt-BR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })}
-        </p>
+      <div className="rounded-lg p-3 bg-slate-900 border border-slate-700">
+        <p className="text-slate-300 text-sm">Dia {data.name}</p>
+        {data.receitas > 0 && (
+          <p className="text-blue-400 font-semibold">
+            Receitas: R${" "}
+            {data.receitas.toLocaleString("pt-BR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </p>
+        )}
+        {data.despesas > 0 && (
+          <p className="text-green-400 font-semibold">
+            Despesas: R${" "}
+            {data.despesas.toLocaleString("pt-BR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </p>
+        )}
       </div>
     );
   }
@@ -74,35 +84,57 @@ const LegendChart = ({ receita, despesa }: LegendChartProps) => {
 
   const processChartData = () => {
     const now = new Date();
-    const currentMonth = now.getMonth();
-    const currentYear = now.getFullYear();
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-
     const dailyData: Record<string, { receitas: number; despesas: number }> =
       {};
 
-    for (let day = 1; day <= daysInMonth; day++) {
+    // Cria dados para os últimos 30 dias
+    for (let i = 29; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      const day = date.getDate();
       dailyData[day] = { receitas: 0, despesas: 0 };
     }
 
+    // Helper para parsear data local corretamente (evita timezone issues)
+    const parseLocalDate = (dateString: string) => {
+      const [year, month, day] = dateString.split("-").map(Number);
+      return new Date(year, month - 1, day);
+    };
+
     receita.forEach((entry) => {
-      const date = new Date(entry.date);
-      if (
-        date.getMonth() === currentMonth &&
-        date.getFullYear() === currentYear
-      ) {
-        const day = date.getDate();
+      const entryDate = parseLocalDate(entry.date);
+      const nowCopy = new Date(now);
+
+      // Compara só a data, sem hora
+      entryDate.setHours(0, 0, 0, 0);
+      nowCopy.setHours(0, 0, 0, 0);
+
+      const daysDiff = Math.floor(
+        (nowCopy.getTime() - entryDate.getTime()) / (1000 * 60 * 60 * 24),
+      );
+
+      // Apenas inclui entradas dos últimos 30 dias
+      if (daysDiff >= 0 && daysDiff < 30) {
+        const day = entryDate.getDate();
         dailyData[day].receitas += entry.value;
       }
     });
 
     despesa.forEach((entry) => {
-      const date = new Date(entry.date);
-      if (
-        date.getMonth() === currentMonth &&
-        date.getFullYear() === currentYear
-      ) {
-        const day = date.getDate();
+      const entryDate = parseLocalDate(entry.date);
+      const nowCopy = new Date(now);
+
+      // Compara só a data, sem hora
+      entryDate.setHours(0, 0, 0, 0);
+      nowCopy.setHours(0, 0, 0, 0);
+
+      const daysDiff = Math.floor(
+        (nowCopy.getTime() - entryDate.getTime()) / (1000 * 60 * 60 * 24),
+      );
+
+      // Apenas inclui entradas dos últimos 30 dias
+      if (daysDiff >= 0 && daysDiff < 30) {
+        const day = entryDate.getDate();
         dailyData[day].despesas += entry.value;
       }
     });
@@ -143,7 +175,7 @@ const LegendChart = ({ receita, despesa }: LegendChartProps) => {
     <div className="w-full bg-slate-800">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-semibold text-white">
-          Evolução das despesas
+          Evolução das despesas x receitas
         </h2>
       </div>
 
@@ -208,7 +240,6 @@ const LegendChart = ({ receita, despesa }: LegendChartProps) => {
             activeDot={{ r: 6 }}
             isAnimationActive={true}
           />
-          <RechartsDevtools />
         </LineChart>
       </ResponsiveContainer>
     </div>
