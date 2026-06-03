@@ -6,9 +6,9 @@ type Props = {
 };
 
 function ProtectedRoute({ children }: Props) {
-  const isAuthenticated = useAppSelector((state) => !!state.auth.token); // usando o token do redux para verificar a autenticação, e ai caso não tenha token, o usuário é redirecionado para a página de login
+  const auth = useAppSelector((state) => state.auth);
 
-  if (!isAuthenticated) {
+  if (!auth.token) {
     return <Navigate to="/" replace />;
   }
 
