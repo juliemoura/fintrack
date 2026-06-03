@@ -7,6 +7,7 @@ import Entries from "@/pages/Entries";
 import { store } from "@/store/store";
 import Layout from "@/pages/Layout";
 import { Provider } from "react-redux";
+import Relatory from "@/pages/Relatory";
 
 function AppRoutes() {
   return (
@@ -24,6 +25,7 @@ function AppRoutes() {
         >
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="entries" element={<Entries />} />
+          <Route path="relatory" element={<Relatory />} />
         </Route>
       </Routes>
     </Provider>
