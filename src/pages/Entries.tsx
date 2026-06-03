@@ -1,21 +1,32 @@
 import EntryForm from "@/components/entries/EntryForm";
 import EntryList from "@/components/entries/EntryList";
 import { Button } from "@/components/ui/Button/Button";
-import { resetEntries, addEntry } from "@/store/entrySlice";
+import { deleteAllEntries, createEntry } from "@/store/entrySlice";
 import { useAppDispatch } from "@/store/store";
 import { generateRandomEntries } from "@/lib/utils";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/store/store";
 import { BadgeX, Sparkles } from "lucide-react";
 
 const Entries = () => {
   const dispatch = useAppDispatch();
+  const userId = useSelector((state: RootState) => state.auth.user?.id);
 
   const resetAllEntries = () => {
-    dispatch(resetEntries());
+    if (!userId) {
+      alert("Usuário não identificado");
+      return;
+    }
+    dispatch(deleteAllEntries(userId));
   };
 
   const handleGenerateRandomEntries = () => {
-    const entries = generateRandomEntries();
-    entries.forEach((entry) => dispatch(addEntry(entry)));
+    if (!userId) {
+      alert("Usuário não identificado");
+      return;
+    }
+    const entries = generateRandomEntries(userId);
+    entries.forEach((entry) => dispatch(createEntry(entry)));
   };
 
   return (
