@@ -11,6 +11,12 @@
       "email": "rodolfo.gama@gmail.com",
       "password": "rodolfogama123",
       "name": "Rodolfo Gama"
+    },
+      {
+      "id": "3",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "name": "Admin"
     }
   ],
   "entries": [
@@ -616,6 +622,51 @@
       "value": 4663,
       "date": "2026-05-07",
       "description": "Devolução"
+    },
+    {
+      "userId": 1,
+      "id": "2cXlcxf94Zk",
+      "type": "receita",
+      "category": "saude",
+      "value": 4663,
+      "date": "2026-05-29",
+      "description": "Bônus"
+    },
+    {
+      "userId": 1,
+      "id": "C_0H9v-HOZ8",
+      "type": "despesa",
+      "category": "poupanca",
+      "value": 3244,
+      "date": "2026-05-13",
+      "description": "Imposto"
+    },
+    {
+      "userId": 1,
+      "id": "XkxlGdWOxpA",
+      "type": "despesa",
+      "category": "alimentacao",
+      "value": 2358,
+      "date": "2026-05-20",
+      "description": "Compra"
+    },
+    {
+      "userId": 1,
+      "id": "EmdFCyrZQrc",
+      "type": "despesa",
+      "category": "outros",
+      "value": 1977,
+      "date": "2026-05-26",
+      "description": "Imposto"
+    },
+    {
+      "userId": 1,
+      "id": "EGSqJky85oQ",
+      "type": "despesa",
+      "category": "saude",
+      "value": 2353,
+      "date": "2026-05-18",
+      "description": "Subscription"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
