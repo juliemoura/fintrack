@@ -13,12 +13,15 @@ import { useAppDispatch } from "@/store/hooks";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { type EntrySchema, entrySchema } from "./schema";
-import { addEntry } from "@/store/entrySlice";
+import { createEntry } from "@/store/entrySlice";
 import { useState } from "react";
 import { Toast } from "../ui/Toast";
+import type { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 const EntryForm = () => {
   const dispatch = useAppDispatch(); // dispatch para enviar a nova entrada para o store
+  const userId = useSelector((state: RootState) => state.auth.user?.id); // pegar o id do usuario logado
 
   const [open, setOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -41,9 +44,14 @@ const EntryForm = () => {
   });
 
   const onSubmit = (data: EntrySchema) => {
+    if (!userId) {
+      setToast("Erro: usuário não identificado");
+      return;
+    }
+
     dispatch(
-      addEntry({
-        id: crypto.randomUUID(),
+      createEntry({
+        userId: userId as number, // userId já vem como número do auth
         type: data.type as "receita" | "despesa",
         category: data.category as
           | "poupanca"
@@ -57,10 +65,15 @@ const EntryForm = () => {
         date: data.date || "",
         description: data.description || "",
       }),
-    );
-    reset();
-    setOpen(false);
-    setToast("Entrada adicionada com sucesso!");
+    )
+      .then(() => {
+        reset();
+        setOpen(false);
+        setToast("Entrada adicionada com sucesso!");
+      })
+      .catch(() => {
+        setToast("Erro ao adicionar entrada");
+      });
   };
 
   return (
