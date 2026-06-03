@@ -11,11 +11,13 @@ import { Pencil } from "lucide-react";
 import EntryFormFields from "./EntryFormFields";
 import { useAppDispatch } from "@/store/hooks";
 import { useForm } from "react-hook-form";
-import { updateEntry, type Entry } from "@/store/entrySlice";
+import { editEntry, type Entry } from "@/store/entrySlice";
 import { entrySchema, type EntrySchema } from "./schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { Toast } from "../ui/Toast";
+import type { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 
 interface EntryEditFormProps {
   entry: Entry;
@@ -23,6 +25,7 @@ interface EntryEditFormProps {
 
 const EntryEditForm = ({ entry }: EntryEditFormProps) => {
   const dispatch = useAppDispatch(); // dispatch para enviar a nova entrada para o store
+  const userId = useSelector((state: RootState) => state.auth.user?.id); // pegar o id do usuario logado
 
   const [open, setOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -56,7 +59,8 @@ const EntryEditForm = ({ entry }: EntryEditFormProps) => {
 
   const onSubmit = (data: EntrySchema) => {
     dispatch(
-      updateEntry({
+      editEntry({
+        userId: userId!,
         id: entry.id,
         type: (data.type ?? "receita") as "receita" | "despesa",
         category: (data.category ?? "outros") as
