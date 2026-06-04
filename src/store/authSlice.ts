@@ -16,8 +16,10 @@ export interface AuthState {
 }
 
 // Recupera dados salvos no localStorage para manter o usuário logado após recarregar a página
-const savedUser = localStorage.getItem("user");
-const savedToken = localStorage.getItem("token");
+// Isso garante que o localStorage só é acessado quando o window existe
+// tanto no ambiente de teste quanto em SSR.
+const savedUser = typeof window !== "undefined" ? localStorage.getItem("user") : null;
+const savedToken = typeof window !== "undefined" ? localStorage.getItem("token") : null;
 
 export const loginUser = createAsyncThunk<
   { user: AuthUser; token: string },
