@@ -55,7 +55,6 @@ const LoginForm = () => {
         icon={<Mail size={18} />}
         placeholder="seu@email.com"
         {...register("email")}
-        type="email"
         error={errors.email?.message}
       />
 
@@ -67,19 +66,6 @@ const LoginForm = () => {
         {...register("password")}
         error={errors.password?.message}
       />
-
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Input
-            type="checkbox"
-            className="rounded border-2 border-slate-600 bg-slate-800 checked:bg-[#6366f1] accent-[#6366f1] m-0 p-0"
-          />
-          <span className="text-sm text-white">Lembrar de mim</span>
-        </div>
-        <a href="#" className="text-sm text-[#6366f1] hover:text-[#818cf8]">
-          Esqueci minha senha?
-        </a>
-      </div>
 
       {toastError && (
         <Toast message={toastError} onClose={() => setToastError(null)} />
