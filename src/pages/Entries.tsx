@@ -1,5 +1,5 @@
-import EntryForm from "@/components/entries/EntryForm";
-import EntryList from "@/components/entries/EntryList";
+import EntryForm from "@/components/entries/EntryAddForm";
+import EntryList from "@/components/entries";
 import { Button } from "@/components/ui/Button/Button";
 import { deleteAllEntries, createEntry } from "@/store/entrySlice";
 import { useAppDispatch } from "@/store/store";
