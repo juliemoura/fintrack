@@ -44,9 +44,24 @@ Nesta pasta ficam centralizados todos os componentes utilizados na página de Da
 ##### Entries
 Nesta pasta ficam centralizados todos os componentes utilizados na página de Entries.
 
+- **EntryAddForm/EntryAddFormFields.test**: Testes unitários do modal de adição com Jest e React Testing Library: cobre abertura/fechamento do dialog, integração com Redux e exibição de toast.
+- **EntryAddForm**: Renderiza o modal de adição de registros, gerenciando a criação de novas entradas e a atualização do estado por meio dos reducers da aplicação.
+- **EntryEditForm/EntryEditFormFields.test**: Testes unitários do modal de edição com Jest e React Testing Library: cobre abertura/fechamento do dialog, integração com Redux e exibição de toast.
 - **EntryEditForm**: Renderiza o modal de edição, concentrando as principais ações de atualização dos registros e acionando os reducers responsáveis pelas alterações de estado.
-- **EntryForm**: Renderiza o modal de adição de registros, gerenciando a criação de novas entradas e a atualização do estado por meio dos reducers da aplicação.
+- **EntryFormFields/EntryFormFields.test**: Testes unitários dos campos do formulário com Jest e React Testing Library: cobre renderização dos campos, validação de erros, interação com selects e inputs.
 - **EntryFormFields**: Componente reutilizável responsável por renderizar os campos do formulário de registros, sendo utilizado tanto nos modais de adição quanto de edição.
+- **EntryList.test**: Teste##### Entries
+Nesta pasta ficam centralizados todos os componentes utilizados na página de Entries.
+
+- **EntryAddForm/EntryAddFormFields.test**: Testes unitários do modal de adição com Jest e React Testing Library: cobre abertura/fechamento do dialog, integração com Redux e exibição de toast.
+- **EntryAddForm**: Renderiza o modal de adição de registros, gerenciando a criação de novas entradas e a atualização do estado por meio dos reducers da aplicação.
+- **EntryEditForm/EntryEditFormFields.test**: Testes unitários do modal de edição com Jest e React Testing Library: cobre abertura/fechamento do dialog, integração com Redux e exibição de toast.
+- **EntryEditForm**: Renderiza o modal de edição, concentrando as principais ações de atualização dos registros e acionando os reducers responsáveis pelas alterações de estado.
+- **EntryFormFields/EntryFormFields.test**: Testes unitários dos campos do formulário com Jest e React Testing Library: cobre renderização dos campos, validação de erros, interação com selects e inputs.
+- **EntryFormFields**: Componente reutilizável responsável por renderizar os campos do formulário de registros, sendo utilizado tanto nos modais de adição quanto de edição.
+- **EntryList.test**: Testes unitários da listagem de entradas com Jest e React Testing Library: cobre renderização dos dados, formatação de datas e valores, e ação de remoção via Redux.
+- **EntryList**: Componente responsável por renderizar a listagem de entradas cadastradas, exibindo informações como data, categoria, descrição e valor, além de disponibilizar ações de edição e remoção.
+- **schema**: Define as regras de validação dos formulários de entrada com Zod e exporta a tipagem `entrySchema` utilizada na aplicação.s unitários da listagem de entradas com Jest e React Testing Library: cobre renderização dos dados, formatação de datas e valores, e ação de remoção via Redux.
 - **EntryList**: Componente responsável por renderizar a listagem de entradas cadastradas, exibindo informações como data, categoria, descrição e valor, além de disponibilizar ações de edição e remoção.
 - **schema**: Define as regras de validação dos formulários de entrada com Zod e exporta a tipagem `entrySchema` utilizada na aplicação.
 
@@ -61,6 +76,7 @@ Nesta pasta ficam centralizados todos os componentes utilizados na página de Lo
 Nesta pasta ficam centralizados todos os componentes utilizados na página de Relatório.
 
 - **RelatoryList**: Componente responsável por renderizar a listagem de entradas cadastradas em tabela em forma de relatório, exibindo informações como data, categoria, descrição e valor, além de disponibilizar ações de edição e remoção.
+- **RelatoryList.test**: Testes unitários do relatório com Jest e React Testing Library: cobre renderização dos cabeçalhos da tabela, formatação de datas e valores, exibição de badges por tipo e comportamento com lista vazia.
 
 ##### UI
 Todos os componentes reutilizáveis usados na aplicação e são baseados no Shadcn/UI.
