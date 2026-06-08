@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/Button/Button";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/store/store";
 import { Sheet } from "lucide-react";
-import RelatoryList from "@/components/relatory/RelatoryList";
 import { exportToXLS } from "@/lib/exportHelpers";
+import RelatoryList from "@/components/relatory";
 
 const Relatory = () => {
   const entries = useSelector((state: RootState) => state.entry.entries);
